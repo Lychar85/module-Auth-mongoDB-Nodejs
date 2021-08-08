@@ -4,12 +4,14 @@ const jwt = require('jsonwebtoken');
 
 exports.getAdminPageconnect = async (req, res) => {
 
-    res.render('adminConnect');
+    res.json('page connexion !');
     
 }
 
 const maxAge = 3 * 24 * 60 * 60 * 1000;
 
+
+//Vous devez créée une clé secrète dans le fichier env(exp: TOKEN_SECRET=grthc123q469a899z489ert3g131dc1w3fb12h1lo8y6448a6ad1)
 const createToken = (id) => {
   return jwt.sign({id}, process.env.TOKEN_SECRET, {
     expiresIn: maxAge
